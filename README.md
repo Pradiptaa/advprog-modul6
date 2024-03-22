@@ -20,3 +20,9 @@ Fungsi `handle_connection` telah direfaktorisasi untuk mencakup kode tambahan ya
 Fungsi `handle_connection` telah direfaktorisasi untuk menangani permintaan HTTP yang tidak valid. Jika permintaan tidak valid, maka kode status `400 Bad Request` akan dikirimkan ke client. Kode status ini mengembalikan pesan yang menjelaskan bahwa permintaan tidak valid. Fungsi ini sekarang dapat menangani permintaan HTTP yang tidak valid dengan cara mengirimkan respons yang sesuai ke client.
 
 ![Commit 3 screen capture](/assets/images/commit3.png)
+
+---
+
+### Commit 4
+
+Fungsi `/sleep` telah ditambahkan ke server. Fungsi ini akan menangani permintaan HTTP yang mengandung `/sleep`. Jika permintaan ditemukan, maka server akan menunggu selama 10 detik sebelum mengirimkan respons ke client. Fungsi ini dapat digunakan untuk menunjukkan bagaimana server dapat menangani permintaan HTTP yang membutuhkan waktu pemrosesan yang lebih lama.
