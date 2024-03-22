@@ -26,3 +26,9 @@ Fungsi `handle_connection` telah direfaktorisasi untuk menangani permintaan HTTP
 ### Commit 4
 
 Fungsi `/sleep` telah ditambahkan ke server. Fungsi ini akan menangani permintaan HTTP yang mengandung `/sleep`. Jika permintaan ditemukan, maka server akan menunggu selama 10 detik sebelum mengirimkan respons ke client. Fungsi ini dapat digunakan untuk menunjukkan bagaimana server dapat menangani permintaan HTTP yang membutuhkan waktu pemrosesan yang lebih lama.
+
+---
+
+### Commit 5
+
+Implementasi `ThreadPool` dilakukan melalui pembuatan sebuah array `workers`, yang berisi thread yang akan digunakan untuk menangani permintaan HTTP. Setiap thread akan menjalankan fungsi `Worker::new(id, receiver)`, yang akan menginisialisasi thread dan mengembalikan `Worker` baru. Setiap `Worker` akan menerima `receiver` sebagai parameter, yang digunakan untuk menerima `Job` dari `ThreadPool`. Setiap `Worker` akan menjalankan loop yang akan menerima `Job` dari `receiver` dan menjalankannya. Dengan demikian, `ThreadPool` dapat menangani permintaan HTTP dengan cara yang lebih efisien.
