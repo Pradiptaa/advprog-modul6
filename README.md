@@ -32,3 +32,9 @@ Fungsi `/sleep` telah ditambahkan ke server. Fungsi ini akan menangani permintaa
 ### Commit 5
 
 Implementasi `ThreadPool` dilakukan melalui pembuatan sebuah array `workers`, yang berisi thread yang akan digunakan untuk menangani permintaan HTTP. Setiap thread akan menjalankan fungsi `Worker::new(id, receiver)`, yang akan menginisialisasi thread dan mengembalikan `Worker` baru. Setiap `Worker` akan menerima `receiver` sebagai parameter, yang digunakan untuk menerima `Job` dari `ThreadPool`. Setiap `Worker` akan menjalankan loop yang akan menerima `Job` dari `receiver` dan menjalankannya. Dengan demikian, `ThreadPool` dapat menangani permintaan HTTP dengan cara yang lebih efisien.
+
+---
+
+### Commit Bonus
+
+Fungsi `build()` digunakan untuk membuat server dengan konfigurasi yang telah ditentukan. Fungsi ini akan mengembalikan server yang telah dibuat yaitu `Result`, yang kemudian dapat digunakan untuk menjalankan server dan memudahkan penanganan kesalahan jika pembuatan `ThreadPool` gagal malfunction. Fungsi ini memungkinkan server untuk dibuat dengan konfigurasi yang telah ditentukan, sehingga memudahkan penggunaan server.
